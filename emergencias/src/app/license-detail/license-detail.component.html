@@ -10,10 +10,10 @@
             <p>{{license.typeLicense.description}}</p>         
 
             <h3>Nombre</h3>
-            <p>{{license.user.name}}</p>                     
+            <p>{{license.user.name | titlecase }}</p>                     
 
             <h3>Apellido</h3>
-            <p>{{license.user.surname}}</p> 
+            <p>{{license.user.surname | titlecase }}</p> 
                     
             <h3>ID HR</h3>
             <p>{{license.user.businessId}}</p> 
@@ -40,10 +40,10 @@
                 <p>{{license.medicDiagnostic.id}}</p> 
                 
                 <h3>Categoría:</h3>
-                <p>{{license.medicDiagnostic.category}}</p> 
+                <p>{{license.medicDiagnostic.category | titlecase }}</p> 
 
                 <h3>Descripción:</h3>
-                <p>{{license.medicDiagnostic.description}}</p> 
+                <p>{{license.medicDiagnostic.description | titlecase }}</p> 
             </div>
 
             <h3>Decisiones médicas</h3>
