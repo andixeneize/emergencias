@@ -1,0 +1,67 @@
+<mat-card *ngIf="license" class="detail-card">
+
+    <mat-card-header>
+      <mat-card-title>Solcitud de licencia: ID {{license.id}}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="content-card">
+
+            <h3>Tipo de licencia</h3>
+            <p>{{license.typeLicense.description}}</p>         
+
+            <h3>Nombre</h3>
+            <p>{{license.user.name}}</p>                     
+
+            <h3>Apellido</h3>
+            <p>{{license.user.surname}}</p> 
+                    
+            <h3>ID HR</h3>
+            <p>{{license.user.businessId}}</p> 
+                    
+            <h3>CUIL</h3>
+            <p>{{license.user.cuil}}</p> 
+                    
+            <h3>Unidad Organizativa</h3>
+            <p>{{license.organizationalUnits[0].descriptionOU}}</p> 
+                    
+            <h3>Cargo</h3>
+            <p>{{license.organizationalUnits[0].jobPositions[0].jobPositionDescription}}</p> 
+                    
+            <h3>Fecha de inicio</h3>
+            <p>{{license.initDate | date:'dd/MM/yyyy'}}</p> 
+                
+            <h3>Fecha de fin</h3>
+            <p>{{license.endingDate | date:'dd/MM/yyyy'}}</p> 
+                    
+            <h3>Diagnóstico médico</h3>
+            
+            <div class="diagnosis">
+                <h3>Código:</h3>
+                <p>{{license.medicDiagnostic.id}}</p> 
+                
+                <h3>Categoría:</h3>
+                <p>{{license.medicDiagnostic.category}}</p> 
+
+                <h3>Descripción:</h3>
+                <p>{{license.medicDiagnostic.description}}</p> 
+            </div>
+
+            <h3>Decisiones médicas</h3>
+            <!-- Viene en blanco -->
+            <p>{{license.medicalDecisions}}</p> 
+
+
+            <h3>Estado de la licencia</h3>
+            {{ license.gcbaLicenseStatus | status }}
+  
+    </mat-card-content>
+    
+    <mat-card-actions>
+      <button mat-button color=accent>Editar</button>
+      <button mat-button color=primary>Re-asignar</button>
+      <button mat-button color=primary>Auditar</button>
+      <button mat-button color=primary>Cambiar de estado</button>
+      <button mat-button color=warn>Anular</button>
+    </mat-card-actions>
+
+</mat-card>

@@ -1,0 +1,11 @@
+<reusable-table *ngIf="licenses.length > 0"
+    [data]="licenses" 
+    [columns]="tableColumns" 
+    [filters]="[]" 
+    [defaults]="[]" 
+    [paginator]="true"
+    (returnActions)="verDetalle($event)"
+    >
+</reusable-table>
+
+<app-license-detail [license]="licenseDetail"></app-license-detail> 
